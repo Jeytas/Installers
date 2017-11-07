@@ -1,12 +1,12 @@
 #!/bin/bash
 #This bash script will clone the RuXt program from the Github Repository to the ~/.ruxt folder and create aliases in the ~/.bashrc file for accessing them (xt and updatext)
 
+if [ ! -e ~/.ruxt ]; then mkdir ~/.ruxt; else echo "The program seems to have already been installed since the ~/.ruxt directory already exists. In that case, please use the command 'updatext'" && exit; fi
+
 if grep -q ".ruxt" ~/.bashrc
 then
     echo "It seems like you've already installed this program before and removed it, but forgot to remove the aliases from your .bashrc. To prevent having several of the same aliases in your .bashrc, please remove the aliases manually from your .bashrc and run this script again" && exit
 else
-
-    if [ ! -e ~/.ruxt ]; then mkdir ~./ruxt; else echo "The program seems to have already been installed since the ~/.ruxt directory already exists. In that case, please use the command 'updatext'" && exit; fi
 
     echo "Cloning from repository starting"
     git clone https://github.com/Jeytas/RuXt.git ~/.ruxt
