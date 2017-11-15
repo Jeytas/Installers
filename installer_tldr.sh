@@ -9,7 +9,7 @@ then
     git clone https://github.com/Jeytas/RubyTldr.git ~/.rtldr
     if [ $? == 0 ]; then echo "Cloning successful"; else echo "Cloning failed" && exit; fi
 
-    alias tldr="ruby ~/.rtldr/tldr.rb"
+    alias tldr="ruby ~/.rtldr/tldr"
     alias updatetldr="bash ~/.rtldr/lib/bin/update.sh"
     if [ $? == 0 ]; then echo "Setting aliases (tldr and updatetldr) in current bash session was successful"; else echo "Setting aliases in current session was unsuccessful" && exit; fi
 
@@ -21,12 +21,12 @@ else
     git clone https://github.com/Jeytas/RubyTldr.git ~/.rtldr
     if [ $? == 0 ]; then echo "Cloning successful"; else echo "Cloning failed" && exit; fi
 
-    alias tldr="ruby ~/.rtldr/tldr.rb"
+    alias tldr="ruby ~/.rtldr/tldr"
     alias updatetldr="bash ~/.rtldr/lib/bin/update.sh"
     if [ $? == 0 ]; then echo "Setting aliases (tldr and updatetldr) in current bash session was successful"; else echo "Setting aliases in current session was unsuccessful" && exit; fi
 
     echo 'alias updatetldr="bash ~/.rtldr/lib/bin/update.sh"' >> ~/.bashrc
-    echo 'alias tldr="ruby ~/.rtldr/tldr.rb"' >> ~/.bashrc
+    echo 'alias tldr="ruby ~/.rtldr/tldr"' >> ~/.bashrc
     if [ $? == 0 ]; then echo "Setting alias in ~/.bashrc has was successful"; else echo "Setting aliases in ~/.bashrc was unsuccessful" && exit; fi
 
     echo "If you see this message, everything should've been installed correctly. To ensure that it has, please run 'tldr tldr' and if you get some help regarding the program everything has been installed correctly. If this doesn't work, please try restarting your current Terminal. If that still doesn't solve the issue, please create anissue on this project's Github"
